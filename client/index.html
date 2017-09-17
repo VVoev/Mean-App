@@ -1,0 +1,44 @@
+<html ng-app="app">
+<head>
+    <title>Hello To Starraft</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+
+    <!--Mine Scripts-->
+    <script src="js/main.js"></script>
+    <script src="controllers/NavigationController.js"></script>
+    <script src="router/router.js"></script>
+
+    <!-- Bootstrap bullshits -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+
+<navigation ng-controller="NavigationController">
+    <div id="navigationWrapper">
+    <nav class="navbar navbar-toggleable-md">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                <li class="nav-item active" ng-repeat="nav in navigation">
+                    <a class="nav-link" href="#!{{nav.href}}">{{nav.name}}<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+</navigation>
+<!-- Header -->
+
+<div ng-view></div>
+</body>
+</html>
